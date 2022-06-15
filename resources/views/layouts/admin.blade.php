@@ -10,7 +10,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Lab ICT</title>
 
     <!-- Fonts -->
     <link href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
@@ -18,6 +18,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
 
     <!-- Favicon -->
     <link href="{{ asset('img/favicon.png') }}" rel="icon" type="image/png">
@@ -30,32 +32,25 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="home">
             <div class="sidebar-brand-icon rotate-n-15">
-                <i class="fas fa-laugh-wink"></i>
+                <img style="width: 40px" src="{{ asset('img/LogoLab-Circle.png') }}" alt="">
             </div>
-            <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+            <div class="sidebar-brand-text mx-3">Jadwal ICT</div>
         </a>
 
         <!-- Divider -->
-        <hr class="sidebar-divider my-0">
+        <hr class="sidebar-divider my-2">
 
-        <!-- Nav Item - Dashboard -->
-        <li class="nav-item {{ Nav::isRoute('home') }}">
-            <a class="nav-link" href="{{ route('home') }}">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span>{{ __('Dashboard') }}</span></a>
-        </li>
 
-        <!-- Divider -->
-        <hr class="sidebar-divider">
 
         <!-- Heading -->
-        <div class="sidebar-heading">
+        <div class="sidebar-heading mt-2">
             {{ __('Settings') }}
         </div>
 
         <!-- Nav Item - Profile -->
+
         <li class="nav-item {{ Nav::isRoute('profile') }}">
             <a class="nav-link" href="{{ route('profile') }}">
                 <i class="fas fa-fw fa-user"></i>
@@ -63,13 +58,77 @@
             </a>
         </li>
 
+        <hr class="sidebar-divider">
+
+        <!-- Nav Item - Dashboard -->
+        @if (Auth::user()->hak_akses=="Admin")
+        <div class="sidebar-heading mt-2">
+            {{ __('Lihat Data') }}
+        </div>
+        <li class="nav-item {{ Nav::isRoute('home') }}">
+            <a class="nav-link" href="{{ route('home') }}">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <span>{{ __('Jadwal') }}</span></a>
+        </li>
+        <li class="nav-item {{ Nav::isRoute('data-matkul') }}">
+            <a class="nav-link" href="{{ route('data-matkul') }}">
+                <i class="fas fa-fw fa-book"></i>
+                <span>{{ __('Matkul') }}</span></a>
+        </li>
+
+        <li class="nav-item {{ Nav::isRoute('data-dosen') }}">
+            <a class="nav-link" href="{{ route('data-dosen') }}">
+                <i class="fas fa-fw fa-user"></i>
+                <span>{{ __('Dosen') }}</span></a>
+        </li>
+
+        <li class="nav-item {{ Nav::isRoute('data-ruangan') }}">
+            <a class="nav-link" href="{{ route('data-ruangan') }}">
+                <i class="fa-solid fa-computer"></i>
+                <span>{{ __('Ruangan') }}</span></a>
+        </li>
+
+        <li class="nav-item {{ Nav::isRoute('data-user') }}">
+            <a class="nav-link" href="{{ route('data-user') }}">
+                <i class="fa-solid fa-users"></i>
+                <span>{{ __('Users') }}</span></a>
+        </li>
+
+        @else
+        <div class="sidebar-heading mt-2">
+            {{ __('Lihat Data') }}
+        </div>
+        <li class="nav-item {{ Nav::isRoute('home') }}">
+            <a class="nav-link" href="{{ route('home') }}">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <span>{{ __('Jadwal') }}</span></a>
+        </li>
+        @endif
+
+
+
+
+
+
+
+
+        <!-- Divider -->
+
+
+        {{-- <li class="nav-item">
+            <a href="{{ route('edit')}}" class="nav-link">
+                <i class="fa-solid fa-pencil"></i>
+                <span>{{ __('Edit Jadwal')}}</span>
+            </a>
+        </li> --}}
+
         <!-- Nav Item - About -->
-        <li class="nav-item {{ Nav::isRoute('about') }}">
+        {{-- <li class="nav-item {{ Nav::isRoute('about') }}">
             <a class="nav-link" href="{{ route('about') }}">
                 <i class="fas fa-fw fa-hands-helping"></i>
                 <span>{{ __('About') }}</span>
             </a>
-        </li>
+        </li> --}}
 
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
@@ -97,7 +156,7 @@
                 </button>
 
                 <!-- Topbar Search -->
-                <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                {{-- <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                     <div class="input-group">
                         <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
                         <div class="input-group-append">
@@ -106,13 +165,13 @@
                             </button>
                         </div>
                     </div>
-                </form>
+                </form> --}}
 
                 <!-- Topbar Navbar -->
                 <ul class="navbar-nav ml-auto">
 
                     <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-                    <li class="nav-item dropdown no-arrow d-sm-none">
+                    {{-- <li class="nav-item dropdown no-arrow d-sm-none">
                         <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fas fa-search fa-fw"></i>
                         </a>
@@ -129,10 +188,10 @@
                                 </div>
                             </form>
                         </div>
-                    </li>
+                    </li> --}}
 
                     <!-- Nav Item - Alerts -->
-                    <li class="nav-item dropdown no-arrow mx-1">
+                    {{-- <li class="nav-item dropdown no-arrow mx-1">
                         <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fas fa-bell fa-fw"></i>
                             <!-- Counter - Alerts -->
@@ -178,10 +237,10 @@
                             </a>
                             <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
                         </div>
-                    </li>
+                    </li> --}}
 
                     <!-- Nav Item - Messages -->
-                    <li class="nav-item dropdown no-arrow mx-1">
+                    {{-- <li class="nav-item dropdown no-arrow mx-1">
                         <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fas fa-envelope fa-fw"></i>
                             <!-- Counter - Messages -->
@@ -234,14 +293,14 @@
                             </a>
                             <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
                         </div>
-                    </li>
+                    </li> --}}
 
                     <div class="topbar-divider d-none d-sm-block"></div>
 
                     <!-- Nav Item - User Information -->
                     <li class="nav-item dropdown no-arrow">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ Auth::user()->name }}</span>
+                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ Auth::user()->username }}</span>
                             <figure class="img-profile rounded-circle avatar font-weight-bold" data-initial="{{ Auth::user()->name[0] }}"></figure>
                         </a>
                         <!-- Dropdown - User Information -->
@@ -250,19 +309,27 @@
                                 <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                 {{ __('Profile') }}
                             </a>
-                            <a class="dropdown-item" href="javascript:void(0)">
+                            {{-- <a class="dropdown-item" href="javascript:void(0)">
                                 <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                                 {{ __('Settings') }}
-                            </a>
-                            <a class="dropdown-item" href="javascript:void(0)">
+                            </a> --}}
+                            {{-- <a class="dropdown-item" href="javascript:void(0)">
                                 <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                                 {{ __('Activity Log') }}
+                            </a> --}}
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{ route('utama') }}">
+                                <i class="fas fa-home fa-sm fa-fw mr-2 text-gray-400"></i>
+                                {{ __('Home') }}
                             </a>
+
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                 {{ __('Logout') }}
                             </a>
+
+
                         </div>
                     </li>
 
@@ -284,11 +351,11 @@
 
         <!-- Footer -->
         <footer class="sticky-footer bg-white">
-            <div class="container my-auto">
+            {{-- <div class="container my-auto">
                 <div class="copyright text-center my-auto">
                     <span>Copyright &copy; Alejandro RH {{ now()->year }}</span>
                 </div>
-            </div>
+            </div> --}}
         </footer>
         <!-- End of Footer -->
 

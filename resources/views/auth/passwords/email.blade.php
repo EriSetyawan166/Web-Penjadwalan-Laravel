@@ -7,7 +7,7 @@
             <div class="card o-hidden border-0 shadow-lg my-5">
                 <div class="card-body p-0">
                     <div class="row">
-                        <div class="col-lg-6 d-none d-lg-block bg-password-image"></div>
+                        <div class="col-lg-6 d-none d-lg-block bg-primary"><img src="../img/LogoLab-Circle.png" style="width: 280px;margin-left: auto;margin-right: auto;display: block; margin-top: 15px" alt=""></div>
                         <div class="col-lg-6">
                             <div class="p-5">
                                 <div class="text-center">
@@ -39,8 +39,12 @@
 
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-primary btn-user btn-block">
-                                            {{ __('Send Password Reset Link') }}
+                                            {{ __('Kirim Link Reset Password') }}
                                         </button>
+                                    </div>
+
+                                    <div class="text-center">
+                                        <a class="small" href="{{ route('login') }}">{{ __('Kembali') }}</a>
                                     </div>
                                 </form>
                             </div>

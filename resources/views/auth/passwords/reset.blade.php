@@ -46,6 +46,8 @@
                                             {{ __('Reset Password') }}
                                         </button>
                                     </div>
+
+
                                 </form>
                             </div>
                         </div>
