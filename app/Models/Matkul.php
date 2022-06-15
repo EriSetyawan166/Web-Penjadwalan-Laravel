@@ -15,3 +15,5 @@ class Matkul extends Model
         return $this->hasMany(Jadwal::class);
     }
 }
+
+// test
