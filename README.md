@@ -3,7 +3,7 @@ Web penjadwalan menggunakan framework laravel
 <br>
 framework yang digunakan `laravel` 
 <br>
-laravel: 8.83.6
+laravel: `8.83.6`
 
 # Fitur
 - Tambah;update;hapus;lihat data jadwal, dosen, matkul, ruangan
