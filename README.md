@@ -74,6 +74,10 @@ Menjalankan aplikasi
 php artisan serve
 ```
 
+username: admin
+<br>
+password: admin
+
 ## Contributors ✨
 <table>
   <tr>
