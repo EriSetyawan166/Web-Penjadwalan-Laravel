@@ -51,15 +51,17 @@
                                     <td>{{ $dm->nama_matkul}}</td>
                                     <td>{{ $dm->jum_sks}}</td>
                                     <td>{{ $dm->prodi}}</td>
-                                    <td class="d-flex justify-content-center"><a href="{{ url('update-matkul',$dm->id)}}" class="btn btn-warning mr-1"><i class="fa-solid fa-pen-to-square"></i> </a><a href="{{ url('delete-matkul', $dm->id)}}" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></a></td>
+                                    <td class="d-flex justify-content-center"><a href="{{ url('update-matkul',$dm->id)}}" class="btn btn-warning mr-1"><i class="fa-solid fa-pen-to-square"></i> </a><a href="{{ url('delete-matkul', $dm->id)}}" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></a>
+                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>
                         </table>
+                        <div class="card-footer">
+                            {{$dtmatkul->links()}}
+                        </div>
                     </div>
-                    <div class="card-footer">
-                        {{$dtmatkul->links()}}
-                    </div>
+
                 </div>
             </div>
             {{-- test --}}
