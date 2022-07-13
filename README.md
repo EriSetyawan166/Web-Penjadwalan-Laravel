@@ -1,89 +1,31 @@
-# Laravel SB Admin 2
+# Web-Penjadwalan-Laravel
+Web penjadwalan menggunakan framework laravel
+<br>
+framework yang digunakan `laravel` 
+<br>
+laravel: 8.83.6
 
-SB Admin 2 for Laravel.
+# Fitur
+- Tambah;update;hapus;lihat data jadwal, dosen, matkul, ruangan
+- Tampilan Home
 
-| Laravel Version | Branch | Support             |
-|-----------------|--------|---------------------|
-| 8.0             | master |                     |
-| 7.0             | v7.0   | End of life         |
-| 6.0             | v6.0   | Security fixes only |
-| 5.8             | v5.8   | End of life         |
+# Screenshoot
+<details>
+    <summary>Foto Web</summary>
+    <br>
 
-## Requirements
+|  |  |  |
+| :---:  | :---:  | :---:  |
+| ![](screenshot/login.jpeg)            | ![](Screenshots/day_home.jpeg)               | ![](Screenshots/day_tambah_data_pelanggaran.jpeg)  
+| ![](Screenshots/day_daftar_kelas.jpeg)       | ![](Screenshots/day_kelas.jpeg)              | ![](Screenshots/day_edit_data_pelanggaran.jpeg) 
+| ![](Screenshots/day_hapus_data.jpeg)         | ![](Screenshots/day_hapus_semua_data.jpeg)   | ![](Screenshots/day_popup_hapus_semua_data.jpeg) 
 
-- PHP >= 7.3.0
-- BCMath PHP Extension
-- Ctype PHP Extension
-- JSON PHP Extension
-- Mbstring PHP Extension
-- OpenSSL PHP Extension
-- PDO PHP Extension
-- Tokenizer PHP Extension
-- XML PHP Extension
+</details>  
 
-## Installation
-
-- Clone the repo and `cd` into it
-- Run `composer install`
-- Rename or copy `.env.example` file to `.env`
-- Run `php artisan key:generate`
-- Set your database credentials in your `.env` file
-
-## Note
-
-Recommend to install this preset on a project that you are starting from scratch, otherwise your project's design might break.
-
-If you found this project useful, then please consider giving it a :star:
-
-## Credits
-
-Laravel SB Admin 2 uses some open-source third-party libraries/packages, many thanks to the web community.
-
-- Laravel - Open source framework.
-- LaravelEasyNav - Making managing navigation in Laravel easy.
-- SB Admin 2 - Thanks to Start Bootstrap.
-
-
-## 💰 Donation
-
-If you found this project helpful or you learned something from the source code and want to thank me, consider buying me a cup of :coffee:
-
-* **[Donate $5](https://www.paypal.me/aleckrh/USD5)**: Thank's for creating this project, here's a coffee or juice or beer for you!
-* **[Donate $10](https://www.paypal.me/aleckrh/USD10)**: Wow, I am stunned. Let me take you to the movies.
-* **[Donate $15](https://www.paypal.me/aleckrh/USD15)**: I really appreciate your work, let's grab some lunch!
-* **[Donate $20](https://www.paypal.me/aleckrh/USD20)**: That's some awesome stuff you did right there, Pizza/Burger is on me!
-
-
-## Preview
-
-`login`
-
-<img src="https://imgur.com/YjGp6Sbl.png">
-
-***
-
-`register`
-
-<img src="https://imgur.com/Wj09cu4l.png">
-
-***
-
-`dashboard`
-
-<img src="https://imgur.com/CrmOfT5l.png">
-
-***
-
-`profile`
-
-<img src="https://imgur.com/5t4eS1rl.png">
-
-***
-
-`logout`
-
-<img src="https://imgur.com/d9JclOYl.png">
-
-## License
-
-Licensed under the MIT license.
+## Contributors ✨
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/EriSetyawan166"><img src="https://avatars.githubusercontent.com/u/72864742?v=4" width="100px;" alt=""/><br /><sub><b>Muhammad Eri Setyawan</b></sub></a><br/><a href="#" title="Code">💻</a> <a href="#" title="Documentation">📖</td>
+    <td align="center"><a href="#"><img src="https://github.com/github.png" width="100px;" alt=""/><br /><sub><b>Rafi Zufary Pramanta</b></sub></a><br/><a href="#" title="Bug reports">🐛</a> <a href="#" title="Ideas, Planning, & Feedback">🤔</a></td>
+  </tr>
+</table>
