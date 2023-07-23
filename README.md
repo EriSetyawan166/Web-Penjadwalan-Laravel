@@ -39,6 +39,10 @@ Jalankan perintah
 ```bash
 composer install --ignore-platform-reqs
 ```
+update composer
+```bash
+composer update --ignore-platform-reqs
+```
 Copy file .env dari .env.example
 ```bash
 copy .env.example .env
